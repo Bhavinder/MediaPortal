@@ -1,0 +1,29 @@
+Installation Instructions
+
+1.  Run git clone https://github.com/Bhavinder/MediaPortal.git
+2.  Create a MySQL database for the project
+        mysql -u root -p
+        create database mediaportal;
+3.  From the projects root run cp .env.example .env
+4.  Configure your .env file
+5.  Run composer update from the projects root folder
+6.  From the projects root folder run:
+
+7. php artisan vendor:publish --tag=laravelroles
+8. php artisan vendor:publish --tag=laravel2step
+
+9.    From the projects root folder run sudo chmod -R 755 ../laravel-auth
+10.    From the projects root folder run php artisan key:generate
+11.    From the projects root folder run php artisan migrate
+12.    From the projects root folder run composer dump-autoload
+13.    From the projects root folder run php artisan db:seed
+14.    Compile the front end assets with npm steps or yarn steps.
+
+Build the Front End Assets with Mix
+Using NPM:
+15.    From the projects root folder run npm install
+16.    From the projects root folder run npm run dev or npm run production
+
+
+gurman@gmail.com / 123456
+bhavinder@yahoo.co.in / 123456
