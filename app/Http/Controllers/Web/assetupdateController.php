@@ -30,9 +30,9 @@ class assetupdateController extends Controller
         );
         //echo json_encode($FormData);
         //die;
-
+        $API_IP = env("API_IP", "");
         $client = new \GuzzleHttp\Client();
-        $response = $client->request('PUT', 'http://52.66.241.21:8888/hwcms/v1.0/entity/image/' . $request->input('form-id'), ['headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'], 'body' => json_encode($FormData, JSON_FORCE_OBJECT) ]);
+        $response = $client->request('PUT', 'http://'.$API_IP .':8888/hwcms/v1.0/entity/image/' . $request->input('form-id'), ['headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json'], 'body' => json_encode($FormData, JSON_FORCE_OBJECT) ]);
         $response = $response->getBody()->getContents();
         // echo '<pre>';
         // print_r($response);
