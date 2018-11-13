@@ -72,13 +72,21 @@ asort($KeyWords);
         <ul class="list">
 
     @foreach($data->result as $asset)
+    <?php 
+    if(isset($asset->{'preview-link'})){
+        $PrevLink = $asset->{'preview-link'};
+    }else{
+        $PrevLink = "/images/no-image-found.png";
+    }
+    
+    ?>
  <li class="float-left col-xs-4 col-lg-4 col-md-4 col-sm-6 mb-4">
         <div id="card-id-{{$asset->id}}" class="asset-group-item  filter{{ str_replace(',', ' ', $asset->keywords) }}">
             <div class="card">
                 <div class="card-block">
                     <div class="img-wrapper">
-                        <a class="thumbnail" data-fancybox="gallery" href="{{ $asset->{'preview-link'} }}">
-                            <img class="card-img-top" src="{{ $asset->{'preview-link'} }}" alt="{{ $asset->name }}">
+                        <a class="thumbnail" data-fancybox="gallery" href="{{ $PrevLink }}">
+                            <img class="card-img-top" src="{{ $PrevLink }}" alt="{{ $asset->name }}">
                         </a>
                     </div>
                     <div class="card-body" id="{{$asset->id}}">
@@ -93,7 +101,7 @@ asort($KeyWords);
 <i class="fa fa-edit" data-toggle="modal" data-target="#AssetModal"></i>
 </a>
 <a class="AssetView"><i class="fa fa-eye"></i></a>
-<a id="AssetDownload" href="{{ $asset->{'preview-link'} }}" type="application/octet-stream"  target="_blank" download><i class="fa fa-download"></i></a>
+<a id="AssetDownload" href="{{ $PrevLink }}" type="application/octet-stream"  target="_blank" download><i class="fa fa-download"></i></a>
 </small>
                     </div>
                 </div>

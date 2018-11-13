@@ -37,31 +37,6 @@ class assetupdateController extends Controller
         // echo '<pre>';
         // print_r($response);
         // die;
-
-        $data = "";
-        try {
-            $client = new GuzzleHttp\Client();
-            $res = $client->get('http://52.66.241.21:8888/hwcms/v1.0/entity/image');
-            $data = json_decode($res->getBody());
-        } catch (ClientErrorResponseException $exception) {
-            echo "Problem in API............";
-            die;
-        }
-        
-
-        // echo "<pre>";
-        // print_r($data);
-        // die;
-
-        //$data = ['Balloon Fight', 'Donkey Kong', 'Excitebike'];
-        //return view('games', compact('games'));
-        //return view('listasset.listassetview', $data);
-
-        return view('listasset.list-asset', compact('data'));
-
-
-
-        //return redirect()->action('list-asset@index');
-        //return redirect()->route('list-asset');
+        return redirect()->route('list-asset');
     }    //
 }
