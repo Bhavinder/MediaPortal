@@ -41,7 +41,7 @@ class assetupdateController extends Controller
 
 
 
-        return redirect()->action('list-asset@index');
-        //return redirect()->route('list-asset');
+        //return redirect()->action('list-asset@index');
+        return redirect()->route('list-asset@index');
     }    //
 }
