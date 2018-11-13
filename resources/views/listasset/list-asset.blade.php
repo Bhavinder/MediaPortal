@@ -46,13 +46,8 @@ asort($KeyWords);
         <div class="row">
         <div class="col-xs-2 col-lg-2 col-md-2 col-sm-12 mb-4">
                     <div class="filterobj">  
-                    <input id="dates" name="dates" class="btn default-color form-control m-0 mb-2" placeholder="Pick Date Range">
+                    <!--<input id="dates" name="dates" class="btn default-color form-control m-0 mb-2" placeholder="Pick Date Range">-->
 
-                        <div class="mb-2 bg-aqua-gradient c2">
-                            <div role="assettype" id="media-type-header" style="text-align: left; padding-left: 10px;" class="search-section-header sidebarh1 small-box-footer chip teal primary-color"><i class="fa fa-minus"></i> Asset Types </div>
-
-
-                        </div>
                         <div class="mb-2 blue lighten-5">
                             <div role="keywords" id="id-cardkeywords" style="text-align: left; padding-left: 10px;" class="blue darken-4 white-text"><i class="fa fa-minus"></i> Keywords </div>
 
@@ -64,6 +59,13 @@ asort($KeyWords);
                             @endforeach
 
                         </div>
+
+                        <div class="mb-2 bg-aqua-gradient c2">
+                            <div role="assettype" id="media-type-header" style="text-align: left; padding-left: 10px;" class="search-section-header sidebarh1 small-box-footer chip teal primary-color"><i class="fa fa-minus"></i> Asset Types </div>
+
+
+                        </div>
+
                     </div>
         </div>
         <div class="col-xs-10 col-lg-10 col-md-10 col-sm-12 mb-4">
