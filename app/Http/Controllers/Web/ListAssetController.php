@@ -35,7 +35,7 @@ class ListAssetController extends Controller
         }else{
         }
 
-
+        $data = "";
         try {
             $client = new GuzzleHttp\Client();
             $res = $client->get('http://52.66.241.21:8888/hwcms/v1.0/entity/image');

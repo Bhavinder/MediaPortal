@@ -93,7 +93,7 @@ asort($KeyWords);
 <i class="fa fa-edit" data-toggle="modal" data-target="#AssetModal"></i>
 </a>
 <a class="AssetView"><i class="fa fa-eye"></i></a>
-<a id="AssetDownload" href="{{ $asset->{'preview-link'} }}" download><i class="fa fa-download"></i></a>
+<a id="AssetDownload" href="{{ $asset->{'preview-link'} }}" type="application/octet-stream"  target="_blank" download><i class="fa fa-download"></i></a>
 </small>
                     </div>
                 </div>
