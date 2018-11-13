@@ -77,7 +77,9 @@ asort($KeyWords);
             <div class="card">
                 <div class="card-block">
                     <div class="img-wrapper">
-                        <img class="card-img-top" src="{{ $asset->{'preview-link'} }}" alt="{{ $asset->name }}">
+                        <a class="thumbnail" data-fancybox="gallery" href="{{ $asset->{'preview-link'} }}">
+                            <img class="card-img-top" src="{{ $asset->{'preview-link'} }}" alt="{{ $asset->name }}">
+                        </a>
                     </div>
                     <div class="card-body" id="{{$asset->id}}">
                         <h5 class="card-title">{{ $asset->name }}</h5>
@@ -90,8 +92,8 @@ asort($KeyWords);
 <a href="#" class="AssetEdit">
 <i class="fa fa-edit" data-toggle="modal" data-target="#AssetModal"></i>
 </a>
-<a id="AssetView"><i class="fa fa-eye"></i></a>
-<a id="AssetDownload"><i class="fa fa-download"></i></a>
+<a class="AssetView"><i class="fa fa-eye"></i></a>
+<a id="AssetDownload" href="{{ $asset->{'preview-link'} }}" download><i class="fa fa-download"></i></a>
 </small>
                     </div>
                 </div>
@@ -156,6 +158,12 @@ asort($KeyWords);
   </div>
 </div>
 </div>
+
+
+
+
+
+
 </div>
 
 </div>
@@ -167,6 +175,7 @@ asort($KeyWords);
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.0/moment.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.3/daterangepicker.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="{{ url('js/star-rating.js') }}"></script>
 <script type="text/javascript" src="{{ url('js/list.js') }}"></script>
 <script>
@@ -197,12 +206,9 @@ var featureList = new List('Asset-list', options);
         //jQuery('#form-rating').rating({value: 3});
     });
 
-
-
-
-
-
-
+    jQuery(".AssetView").click(function(){
+        jQuery(this).closest(".card-block").find( ".thumbnail" ).click();
+    });
 
 
 
@@ -292,6 +298,10 @@ jQuery('#id-cardkeywords').click(function(){
         });
 
 
+
+
+
+
 });	
 
 </script>
@@ -302,6 +312,7 @@ jQuery('#id-cardkeywords').click(function(){
 @section('template_linked_css')
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <link media="all" type="text/css" rel="stylesheet" href="{{ url('css/star-rating.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
 
 <style>
 
@@ -363,5 +374,12 @@ transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-bo
 .custom-control{
     padding-left: 2rem!important;
 }
+
+
+
+
+
+
+
 </style>
 @stop

@@ -38,7 +38,7 @@ class ListAssetController extends Controller
 
         try {
             $client = new GuzzleHttp\Client();
-            $res = $client->get('http://172.31.15.11:8888/hwcms/v1.0/entity/image');
+            $res = $client->get('http://52.66.241.21:8888/hwcms/v1.0/entity/image');
             $data = json_decode($res->getBody());
         } catch (ClientErrorResponseException $exception) {
             echo "Problem in API............";
