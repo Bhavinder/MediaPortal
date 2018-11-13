@@ -97,9 +97,9 @@ asort($KeyWords);
 <input id="input-{{$asset->id}}" name="input-{{$asset->id}}" class="rating rating-loading" data-show-clear="false" data-readonly="true" data-show-caption="false" data-size="xs" data-min="0" data-max="5" data-step="0.1" value="{{ isset($asset->rating) ? $asset->rating : 0 }}">
 
 <small class="text-muted">
-<a href="#" class="AssetEdit">
+<!--<a href="#" class="AssetEdit">
 <i class="fa fa-edit" data-toggle="modal" data-target="#AssetModal"></i>
-</a>
+</a>-->
 <a class="AssetView"><i class="fa fa-eye"></i></a>
 <a id="AssetDownload" href="{{ $PrevLink }}" type="application/octet-stream"  target="_blank" download><i class="fa fa-download"></i></a>
 </small>
