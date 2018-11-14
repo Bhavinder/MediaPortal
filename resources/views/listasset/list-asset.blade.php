@@ -87,7 +87,7 @@ asort($KeyWords);
             <div class="card">
                 <div class="card-block">
                     <div class="img-wrapper">
-                        <a class="thumbnail" data-fancybox="gallery" href="{{ $PrevLink }}">
+                        <a id="pr-{{$asset->id}}" class="thumbnail" data-fancybox="gallery" href="{{ $PrevLink }}">
                             <img class="card-img-top" src="{{ $PrevLink }}" alt="{{ $asset->name }}">
                         </a>
                     </div>
@@ -102,7 +102,7 @@ asort($KeyWords);
 <!--<a href="#" class="AssetEdit">
 <i class="fa fa-edit" data-toggle="modal" data-target="#AssetModal"></i>
 </a>-->
-<a class="AssetView"><i class="fa fa-eye"></i></a>
+<a class="AssetView" onClick="openPreview('pr-{{$asset->id}}');"><i class="fa fa-eye"></i></a>
 <a id="AssetDownload" href="{{ $PrevLink }}" type="application/octet-stream"  target="_blank" download><i class="fa fa-download"></i></a>
 </small>
                     </div>
@@ -189,6 +189,12 @@ asort($KeyWords);
 <script type="text/javascript" src="{{ url('js/star-rating.js') }}"></script>
 <script type="text/javascript" src="{{ url('js/list.js') }}"></script>
 <script>
+
+function openPreview(evtClickID){
+    jQuery('#' + evtClickID).click();
+}
+
+
 jQuery(function(){
 
 var options = {
@@ -214,10 +220,6 @@ var featureList = new List('Asset-list', options);
         jQuery('#form-content-link').val(jQuery(this).closest(".card-block").find(".card-img-top").attr("src"));
 
         //jQuery('#form-rating').rating({value: 3});
-    });
-
-    jQuery(".AssetView").click(function(){
-        jQuery(this).closest(".card-block").find( ".thumbnail" ).click();
     });
 
 
